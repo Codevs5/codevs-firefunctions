@@ -6,7 +6,7 @@ const isCreateOp = require('./utils/tags.js').isCreateOp;
 admin.initializeApp(functions.config().firebase);
 
 
-exports.addOrDeleteTag = functions.database.ref('/entries/{entryId}/tags/{tagId}')
+exports.addOrDeleteTag = functions.database.ref('/entries/info/{entryId}/tags/{tagId}')
     .onWrite(e => {
         const tagId = e.params.tagId;
         const entryId = e.params.entryId;
